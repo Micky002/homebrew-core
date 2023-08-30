@@ -1,4 +1,4 @@
-class Qemu < Formula
+class QemuAT804 < Formula
   desc "Emulator for x86 and PowerPC"
   homepage "https://www.qemu.org/"
   url "https://download.qemu.org/qemu-8.0.4.tar.xz"
@@ -6,15 +6,9 @@ class Qemu < Formula
   license "GPL-2.0-only"
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
-  bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "73592702d0a676fa2cc69cd456ff580531f7d01fbca2c55bb41dc3f87056efa6"
-    sha256 arm64_monterey: "7ba1a94939013650572a5b0209361a88f09b6c2cea85bbb49189c2e03130e8fa"
-    sha256 arm64_big_sur:  "004779f306010db64d7f425e5ac36d79349254ec29a876698dc128fb32c3bc3d"
-    sha256 ventura:        "aa42ac6a578522165be5af659401e5bee74bfabd3cfce59a4fe700054a395ae9"
-    sha256 monterey:       "055d8c18ffc723c3acd30fd16a34aec77fb032f5fcb5945e465d14927eacf57e"
-    sha256 big_sur:        "7842258ec38cee5487c8d406e76c38c3d84652d7fe0d763cedbbec5c2d286eeb"
-    sha256 x86_64_linux:   "149e2654c430f68861f6e84925d65e150de0c24155d4580885a34904a5fe87ce"
+  livecheck do
+    url "https://www.qemu.org/download/"
+    regex(/href=.*?qemu[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   depends_on "libtool" => :build
