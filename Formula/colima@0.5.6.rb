@@ -1,4 +1,4 @@
-class Colima056 < Formula
+class ColimaAT056 < Formula
   desc "Container runtimes on MacOS (and Linux) with minimal setup"
   homepage "https://github.com/abiosoft/colima/blob/main/README.md"
   url "https://github.com/abiosoft/colima.git",
